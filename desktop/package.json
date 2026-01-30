@@ -1,0 +1,37 @@
+{
+  "name": "markdown-notes-desktop",
+  "version": "1.0.0",
+  "private": true,
+  "main": "main.js",
+  "scripts": {
+    "dev": "electron .",
+    "pack": "node scripts/prepare-assets.mjs && electron-builder --win",
+    "pack:dir": "node scripts/prepare-assets.mjs && electron-builder --dir",
+    "pack:portable": "node scripts/prepare-assets.mjs && electron-builder --win portable"
+  },
+  "devDependencies": {
+    "electron": "^40.1.0",
+    "electron-builder": "^26.4.0"
+  },
+  "build": {
+    "appId": "com.example.markdownnotes",
+    "productName": "Markdown Notes",
+    "files": [
+      "main.js",
+      "preload.js",
+      "renderer/**"
+    ],
+    "extraResources": [
+      {
+        "from": "../target/markdown-viewer-1.0.0.jar",
+        "to": "backend/markdown-viewer.jar"
+      }
+    ],
+    "win": {
+      "target": [
+        "nsis",
+        "portable"
+      ]
+    }
+  }
+}

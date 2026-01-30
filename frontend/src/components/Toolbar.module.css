@@ -1,0 +1,153 @@
+.header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 16px;
+  background: #1f1f1f;
+  border-bottom: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 220px;
+}
+
+.brandText {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.appName {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--accent-strong);
+}
+
+.currentTitle {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.primaryButton,
+.secondaryButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border-radius: var(--radius);
+  border: 1px solid transparent;
+  background: var(--accent);
+  color: #ffffff;
+  font-size: 13px;
+  transition: transform var(--transition), box-shadow var(--transition), opacity var(--transition);
+}
+
+.secondaryButton {
+  background: var(--bg-secondary);
+  border-color: var(--border);
+  color: var(--text-primary);
+}
+
+.primaryButton:hover,
+.secondaryButton:hover,
+.iconButton:hover,
+.toggleButton:hover {
+  transform: translateY(-1px);
+}
+
+.primaryButton:disabled,
+.secondaryButton:disabled,
+.iconButton:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+  transform: none;
+}
+
+.iconButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 32px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--bg-secondary);
+  transition: transform var(--transition), border-color var(--transition);
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--bg-secondary);
+  flex: 1;
+  max-width: 280px;
+}
+
+.search input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  padding: 0;
+  color: var(--text-primary);
+}
+
+.search input:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.viewToggle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.toggleButton,
+.toggleActive {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 32px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--bg-secondary);
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.toggleActive {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(124, 58, 237, 0.2);
+}
+
+@media (max-width: 1100px) {
+  .header {
+    flex-wrap: wrap;
+  }
+
+  .search {
+    order: 3;
+    flex: 1 1 100%;
+    max-width: none;
+  }
+}
+
+@media (max-width: 720px) {
+  .actions {
+    flex-wrap: wrap;
+  }
+}

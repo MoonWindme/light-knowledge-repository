@@ -1,0 +1,26 @@
+# Java / Maven build
+/target/
+/dist/
+/dist-jfx/
+
+# Node / Vite / Electron
+/frontend/node_modules/
+/frontend/dist/
+/frontend/.vite/
+/frontend/.env*
+/desktop/node_modules/
+/desktop/renderer/
+/desktop/dist/
+/desktop/out/
+/desktop/build/
+
+# App data
+/notes/
+
+# IDE / OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+*.iml
+*.log
