@@ -12,7 +12,7 @@
 
     <groupId>com.example</groupId>
     <artifactId>markdown-viewer</artifactId>
-    <version>1.0.0</version>
+    <version>1.2.0</version>
     <name>Markdown Notes Backend</name>
 
     <properties>

@@ -1,0 +1,240 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--bg-secondary);
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 12px;
+  background: var(--bg-primary);
+  border-bottom: 1px solid var(--border);
+}
+
+.toolButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: transparent;
+  color: var(--text-secondary);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background var(--transition), color var(--transition);
+}
+
+.toolButton:hover {
+  background: var(--bg-hover);
+  color: var(--text-primary);
+}
+
+.toolButton:active {
+  background: var(--bg-active);
+}
+
+.divider {
+  width: 1px;
+  height: 20px;
+  background: var(--border);
+  margin: 0 4px;
+}
+
+.mindmapWrapper {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+.mindmapSvg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* markmap 节点样式覆盖 */
+.mindmapSvg :global(.markmap-node) {
+  cursor: pointer;
+}
+
+.mindmapSvg :global(.markmap-node:hover) rect {
+  fill: var(--bg-hover) !important;
+}
+
+.mindmapSvg :global(.markmap-foreign) {
+  color: var(--text-primary);
+}
+
+.mindmapSvg :global(.markmap-link) {
+  stroke: var(--accent);
+  stroke-opacity: 0.6;
+}
+
+.empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+.empty p {
+  margin: 0;
+}
+
+/* 编辑对话框 */
+.editOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.editDialog {
+  background: var(--bg-primary);
+  border-radius: 12px;
+  padding: 16px;
+  min-width: 300px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.editHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-primary);
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+.editInput {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  font-size: 14px;
+  outline: none;
+  transition: border-color var(--transition);
+}
+
+.editInput:focus {
+  border-color: var(--accent);
+}
+
+.editActions {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+  justify-content: flex-end;
+}
+
+.editConfirm,
+.editCancel {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background var(--transition);
+}
+
+.editConfirm {
+  background: var(--accent);
+  color: white;
+}
+
+.editConfirm:hover {
+  background: var(--accent-hover);
+}
+
+.editCancel {
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+}
+
+.editCancel:hover {
+  background: var(--bg-hover);
+  color: var(--text-primary);
+}
+
+/* 提示文字 */
+.hint {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 6px 12px;
+  background: var(--bg-primary);
+  border-radius: 6px;
+  color: var(--text-muted);
+  font-size: 12px;
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+/* 右键菜单 */
+.contextMenu {
+  position: fixed;
+  background: var(--bg-primary);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 4px;
+  min-width: 150px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  z-index: 200;
+}
+
+.contextMenu button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 8px 12px;
+  border: none;
+  background: transparent;
+  color: var(--text-primary);
+  font-size: 13px;
+  text-align: left;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background var(--transition);
+}
+
+.contextMenu button:hover {
+  background: var(--bg-hover);
+}
+
+.contextMenu .deleteMenuItem {
+  color: #ef4444;
+}
+
+.contextMenu .deleteMenuItem:hover {
+  background: rgba(239, 68, 68, 0.1);
+}
+
+/* 选中节点样式 */
+.mindmapSvg :global(.markmap-node.selected) rect {
+  stroke: var(--accent);
+  stroke-width: 2px;
+}
+
+.selected rect {
+  stroke: var(--accent) !important;
+  stroke-width: 2px !important;
+}

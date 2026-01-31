@@ -1,4 +1,4 @@
-export type ViewMode = 'split' | 'edit' | 'preview'
+export type ViewMode = 'split' | 'edit' | 'preview' | 'mindmap' | 'split-mindmap'
 
 export type NodeType = 'folder' | 'file'
 

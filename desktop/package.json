@@ -1,6 +1,6 @@
 {
   "name": "markdown-notes-desktop",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "private": true,
   "main": "main.js",
   "scripts": {
@@ -23,7 +23,7 @@
     ],
     "extraResources": [
       {
-        "from": "../target/markdown-viewer-1.0.0.jar",
+        "from": "../target/markdown-viewer-1.2.0.jar",
         "to": "backend/markdown-viewer.jar"
       }
     ],

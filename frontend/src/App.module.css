@@ -49,12 +49,12 @@
   grid-template-columns: minmax(0, 1fr);
 }
 
-.workspace[data-view='edit'] > :nth-child(2) {
-  display: none;
+.workspace[data-view='mindmap'] {
+  grid-template-columns: minmax(0, 1fr);
 }
 
-.workspace[data-view='preview'] > :nth-child(1) {
-  display: none;
+.workspace[data-view='split-mindmap'] {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
 }
 
 @media (max-width: 1024px) {
